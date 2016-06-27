@@ -50,7 +50,7 @@ PiecesNQualité:<input type ="number" name="nrebut" required>
 </form>
 <script>
 //Evenement chargé au debut du page 
-window.onload=setTimeUnix('idInput1')
+window.onload=setTimeUnix('idInput1');
 //var a = document.getElementById('idPx');
 //a.addEventListener('click',setTimeUnix2('idnull'),false);
 </script>
