@@ -45,7 +45,7 @@ PiecesNQualité:<input type ="number" name="nrebut" required>
 <button id="idButton4" onclick="setTimeUnix('idInput4')" type="button">Stop2 </button><input id="idInput4" name="idInput4" type ="text" value="0" >
 </p>
 
-<button type="submit" onclick="setTimeUnix3('idInput2')" value="valider">VALIDER</button>
+<button type="submit" name="valider" onclick="setTimeUnix3('idInput2')" value="valider">VALIDER</button>
 
 </form>
 <script>

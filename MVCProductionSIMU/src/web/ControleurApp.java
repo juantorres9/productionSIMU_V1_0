@@ -27,21 +27,21 @@ public class ControleurApp extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String a=request.getParameter("idInput2");
-		String b=request.getParameter("nameDrop2");
-		if(a==null){
-			this.getServletContext().getRequestDispatcher(FORMUlAIRE).forward(request, response);
-		}else{
-			a+=" vous avez bien enregistre votre application ";
-			request.setAttribute("tempFinal", a);
-			request.setAttribute("nom", b);
-			this.getServletContext().getRequestDispatcher(VALIDATION).forward(request, response);
+		this.getServletContext().getRequestDispatcher(FORMUlAIRE).forward(request, response);
 		}
-	}
+		
+		
+
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher(FORMUlAIRE).forward(request, response);
+
+		
+		
+			this.getServletContext().getRequestDispatcher(FORMUlAIRE).forward(request, response);
+	
+		}
 		
 	}
 
-}
+
