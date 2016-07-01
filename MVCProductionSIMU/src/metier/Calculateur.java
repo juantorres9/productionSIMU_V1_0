@@ -19,8 +19,8 @@ public static final String UNITEtemps="minute";//possible minute ou seconde
 	 tr=calculUnixDif(stop,start,UNITEtemps);
 	 return tr;
  }
-
- //Calcul le temps TNET en double et enregistrement sur Bean //Unité du temps par defaut= UNITEtemps OK
+//****************************************************************************************************************************************
+ //CALCULER  le TEMPS TNET en double et enregistrement sur Bean //Unité du temps par defaut= UNITEtemps OK
  /**
 DEPRECATED: public double  calculTnet(int nb , int nr ,  String ref){
 	 double tc =getTC(UNITEtemps,ref);
@@ -34,8 +34,8 @@ DEPRECATED: public double  calculTnet(int nb , int nr ,  String ref){
 	 tnet=Math.round(tnet*10000.0)/10000.0;
 	 return tnet;
  }
-
-//CALCULER le temps TU en double et enregistrment sur Bean OK
+//****************************************************************************************************************************************
+//CALCULER le temps TU en double et enregistrement sur Bean OK
  /**DEPRECATED: public  double  calculTu(int nb,String ref){
  double tc =getTC(UNITEtemps,ref);
  double tu=nb*tc;	
@@ -106,7 +106,7 @@ DEPRECATED: public double  calculTnet(int nb , int nr ,  String ref){
 	 String [] valeurs= parametre.split("-");
 	 return valeurs;
  }
- 
+//****************************************************************************************************************************************
 //OBTENIR Parametre en format String provenanan de la requete Http
  public String obtenirParam( HttpServletRequest request, String nomChamp ) {
     String valeur = request.getParameter( nomChamp );
