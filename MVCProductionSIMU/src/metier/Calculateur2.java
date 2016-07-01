@@ -7,19 +7,28 @@ import java.time.format.DateTimeFormatter;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class Calculateur {
+public class Calculateur2 {
 		
 public static final String UNITEtemps="minute";//possible minute ou seconde 
-//****************************************************************************************************************************************
- //CALCULER STRING difference du  temps STOP-START en utilisant des Strings comme parametres 
- double calculStringDif(String sstop, String sstart){
+//**************************************************************************************************************************************
+ //Calcul le temps TR en double  et enregistrement sur Bean OK
+ double calculTr(long stop, long start){
 	 double tr=0;
-	 long stop = Long.parseLong(sstop);
-	 long start=Long.parseLong(sstart);
 	 tr=calculUnixDif(stop,start,UNITEtemps);
 	 return tr;
  }
-
+ //Calcul le temps ARRET1 en double et enregistrment sur Bean OK
+ double calculArret1(long stop, long start){
+	 double arret1=0;
+	 arret1=calculUnixDif(stop,start,UNITEtemps);
+	 return arret1;
+ }
+ //Calcul le temps ARRET2en double et enregistrment sur Bean OK
+ double calculArret2(long stop, long start){
+	 double arret2=0;
+	 arret2=calculUnixDif(stop,start,UNITEtemps);
+	 return arret2;
+ }
  //Calcul le temps TNET en double et enregistrement sur Bean //Unité du temps par defaut= UNITEtemps OK
  /**
 DEPRECATED: public double  calculTnet(int nb , int nr ,  String ref){
@@ -49,7 +58,7 @@ DEPRECATED: public double  calculTnet(int nb , int nr ,  String ref){
 	 return tu;
  }
 
- //***************************************************************************************************************************************
+ //***********************************************************************************************************************************
  //CHOISIR le TC a utiliser pour calculer les valeurs tu ET tnet selon le parametre reference  la requete  HTTP OK à MODIFIER POUR SECONDS  MINUTES ET HEURES PAR BOBINEUSE  OK
  /**DEPRECATED:double getTC(String type,String ref ){
 	TempsCycle tcObj=TempsCycle.getTcObjet();
@@ -65,7 +74,7 @@ DEPRECATED: public double  calculTnet(int nb , int nr ,  String ref){
 	}
 	return tc;
 	}	**/
- //***************************************************************************************************************************************
+ //**************************************************************************************************************************************
  //CALCULER de DIFFERENCE  entre deux timestamps UNIX  et retourne en MINUTES ou SECONDES double OK
  double calculUnixDif(long  stop , long start ,String type){
 	 double dif=stop-start;
@@ -81,7 +90,7 @@ DEPRECATED: public double  calculTnet(int nb , int nr ,  String ref){
 	 }
 	 return result;
  }
- //***************************************************************************************************************************************
+ //*************************************************************************************************************************************
  //FORMATAGE  de timestamps UNIX en DATETIME SQL String OK
  String formaterUnixTime(long unixtime){
 	 Instant timestamp;
@@ -100,15 +109,16 @@ DEPRECATED: public double  calculTnet(int nb , int nr ,  String ref){
 	 return datetime2;
  }
  
-//****************************************************************************************************************************************
+//*************************************************************************************************************************************
  //SEPARER separere des String provenanat du requet  Multiple en 1 tableau de 2 String REF et TC
  public  String [] separerString(String parametre){
 	 String [] valeurs= parametre.split("-");
 	 return valeurs;
  }
  
+
 //OBTENIR Parametre en format String provenanan de la requete Http
- public String obtenirParam( HttpServletRequest request, String nomChamp ) {
+public String obtenirParam( HttpServletRequest request, String nomChamp ) {
     String valeur = request.getParameter( nomChamp );
     if ( valeur == null || valeur.trim().length() == 0 ) {
         return null;

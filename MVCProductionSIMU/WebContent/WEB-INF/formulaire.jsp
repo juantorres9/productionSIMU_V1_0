@@ -18,9 +18,9 @@
 <p>Reference:
 <select  name="nameDrop1" form="idForm1" required>
   <option value="">Choisir</option>
-  <option value="Ref1">Reference1</option>
-  <option value="Ref2">Reference2</option>
-  <option value="ref3">Reference3</option>
+  <option value="Ref1-0.96">Reference1</option>
+  <option value="Ref2-1.02">Reference2</option>
+  <option value="ref3-1.05">Reference3</option>
 </select>
 </p>
 

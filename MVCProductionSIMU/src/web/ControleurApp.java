@@ -12,6 +12,7 @@ import base.ImpleTableaux;
 import base.InterfaceTableaux;
 import metier.Calculateur;
 import metier.CycleBean;
+import metier.GenerateurBean;
 
 public class ControleurApp extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -19,6 +20,7 @@ public class ControleurApp extends HttpServlet {
 	public static final String FORMUlAIRE="/WEB-INF/formulaire.jsp";
 	public static final String VALIDATION="/WEB-INF/validationFeuille.jsp";
 	//classes metier
+	private GenerateurBean generateur;
 	private Calculateur calcul;
 	//classes modele
 	private InterfaceTableaux base;
@@ -46,11 +48,15 @@ public class ControleurApp extends HttpServlet {
 	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Etape1: envoie de requete pour traitement et recuperation de Bean rempli.
+		//Etape0: Instantiation des Objet 
+		generateur= new GenerateurBean();
 		calcul=new Calculateur();
+		base= new ImpleTableaux();
+		//Etape1: envoie de requete pour generation d' Objet  Bean rempli.
+	
 		CycleBean bean=	calcul.creerCycleBean(request);
 		//Etape2: enregistrement de Bean recuperé  dans la base de Données
-		base= new ImpleTableaux();
+		
 		//Etape3: creation tableau1
 		base.creerTableau1(bean);
 		//Etape4: creation tableau2
