@@ -11,7 +11,7 @@ public class Calculateur {
 		
 public static final String UNITEtemps="minute";//possible minute ou seconde 
 //****************************************************************************************************************************************
- //CALCULER STRING difference du  temps STOP-START en utilisant des Strings comme parametres 
+ //CALCULER  difference du  temps STOP-START en utilisant des STRING comme parametres et en retournant un DOUBLE 
  double calculStringDif(String sstop, String sstart){
 	 double tr=0;
 	 long stop = Long.parseLong(sstop);
@@ -28,7 +28,7 @@ DEPRECATED: public double  calculTnet(int nb , int nr ,  String ref){
 	 tnet=Math.round(tnet*10000.0)/10000.0;
 	 return tnet;
  }**/
- public static double calculTnet(int nb , int nr ,String ref ,double tc ){
+ public  double calculTnet(int nb , int nr ,String ref ,double tc ){
 	 double tnet=0;
 	 tnet=(nb+nr)*tc;
 	 tnet=Math.round(tnet*10000.0)/10000.0;
@@ -42,7 +42,7 @@ DEPRECATED: public double  calculTnet(int nb , int nr ,  String ref){
  tu=Math.round(tu*10000.0)/10000.0;
  return tu;
 }**/
- public static double calculTu(int nb,String ref ,double tc ){
+ public  double calculTu(int nb,String ref ,double tc ){
 	 double tu=0;
 	 tu=(nb)*tc;
 	 tu=Math.round(tu*10000.0)/10000.0;
@@ -102,12 +102,15 @@ DEPRECATED: public double  calculTnet(int nb , int nr ,  String ref){
  
 //****************************************************************************************************************************************
  //SEPARER separere des String provenanat du requet  Multiple en 1 tableau de 2 String REF et TC
- public  String [] separerString(String parametre){
+ public String [] separerString(String parametre) throws Exception{
 	 String [] valeurs= parametre.split("-");
-	 return valeurs;
- }
+	 if(valeurs.length==2){	 
+	 }else{
+		 throw new Exception("le string  tableau a une taille different  a 2 ")  ;
+	 }return valeurs;
+ 	}	
 //****************************************************************************************************************************************
-//OBTENIR Parametre en format String provenanan de la requete Http
+//OBTENIR Parametre en format String provenanant de la requete Http
  public String obtenirParam( HttpServletRequest request, String nomChamp ) {
     String valeur = request.getParameter( nomChamp );
     if ( valeur == null || valeur.trim().length() == 0 ) {

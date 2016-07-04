@@ -10,9 +10,18 @@
 <body >
 <h2>Votre formulaire à bien ete enregistrée </h2>
 
-<p>Nom : ${nom}</p>
-<p>Temps Final : ${tempFinal}</p>
-
+les informations enregistrées sont le suivantes :
+<p>Datetimes: ${cycle.datetimes}</p>
+<p>Reference : ${cycle.reference}</p>
+<p>Nom : ${cycle.nom}</p>
+<p>tr : ${cycle.tr}</p>
+<p>arret1 : ${cycle.arret1}</p>
+<p>arret2 : ${cycle.arret2}</p>
+<p>nb : ${cycle.nb}</p>
+<p>nr : ${cycle.nr}</p>
+<p>tnet: ${cycle.tnet}</p>
+<p>tu: ${cycle.tu}</p>
+<p>tempsCycle: ${cycle.tempsCycle}</p>
 <h1></h1>
 </body>
 </html>
