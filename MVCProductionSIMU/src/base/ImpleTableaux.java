@@ -1,5 +1,8 @@
 package base;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
 import metier.CycleBean;
 
 public class ImpleTableaux implements InterfaceTableaux{
@@ -25,8 +28,19 @@ public class ImpleTableaux implements InterfaceTableaux{
 //********************Methodes Auxiliaires*******************************************
     //Methode REQUETE SQL pour appeler l'execution d'un procedure
 	public void executerProSQL(String procedure) {
-		// TODO Auto-generated method stub
-		
+		Connection conn=SingletonConnection.getConnection();//Creation Connection 
+			
+		try {
+			PreparedStatement  ps =conn.prepareStatement("CALL'"+nomEtagere+"' AND vide>0");
+			 
+				
+			ps.executeUpdate();//Executer la requete
+				ps.close();
+			
+			} catch (SQLException e) {
+			
+				e.printStackTrace();
+			}		
 	}
 	
 	
