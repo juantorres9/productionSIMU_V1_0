@@ -18,7 +18,7 @@ public class ControleurApp extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	//Variables statiques de VUES
 	public static final String FORMUlAIRE="/WEB-INF/formulaire.jsp";
-	public static final String VALIDATION="/WEB-INF/validationFeuille.jsp";
+	public static final String VALIDATION="/WEB-INF/validation.jsp";
 	//classes metier
 	private CycleBean bean;
 	private GenerateurBean generateur;
@@ -36,8 +36,8 @@ public class ControleurApp extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	//	this.getServletContext().getRequestDispatcher(FORMUlAIRE).forward(request, response);
-	//doPost(request,response);
+	this.getServletContext().getRequestDispatcher(FORMUlAIRE).forward(request, response);
+	
 	}
 		
 		
@@ -63,6 +63,7 @@ public class ControleurApp extends HttpServlet {
 		//Etape5 envoi de Bean enregistrer vers page validation
 		request.setAttribute("cycle", bean);
 		
+		//Forward avec Attribute  vers page VALIDATION 
 		this.getServletContext().getRequestDispatcher(VALIDATION ).forward(request, response);
 		}
 		

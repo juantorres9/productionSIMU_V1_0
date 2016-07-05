@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>MVCProductionSIMU</display-name>
-
+ 
+ <!-- SERVLETS -->
+ 
+  <servlet>
+  	<servlet-name>DispatchServ</servlet-name>
+  	<servlet-class>web.DispatchServ</servlet-class>
+  </servlet>
   <servlet>
     <servlet-name>ControleurApp</servlet-name>
     <servlet-class>web.ControleurApp</servlet-class>
   </servlet>
+  
+ <!-- MAPPING SERVLETS  -->
+ 
   <servlet-mapping>
     <servlet-name>ControleurApp</servlet-name>
     <url-pattern>/control</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DispatchServ</servlet-name>
+  	<url-pattern>/dispatch</url-pattern>
+  </servlet-mapping>
+  
+  <!-- CONFIG EXTRA -->
   
   <session-config>
-  <session-timeout>480</session-timeout>
+    <session-timeout>480</session-timeout>
   </session-config>
-
-
-
-
 </web-app>

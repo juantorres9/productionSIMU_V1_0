@@ -1,0 +1,12 @@
+@CHARSET "ISO-8859-1";
+.h1{
+	text-align:center;
+		color:#0000EE ;
+}
+.p1{
+	text-align:center;
+}
+.button1{
+	text-align:center;
+	border=0;
+}

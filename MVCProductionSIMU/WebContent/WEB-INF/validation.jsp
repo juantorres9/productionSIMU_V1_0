@@ -23,6 +23,12 @@ les informations enregistrées sont le suivantes :
 <p>tu: ${cycle.tu}</p>
 <p>tempsCycle: ${cycle.tempsCycle}</p>
 <h1></h1>
+
+<form method="get" action="dispatch" id="idForm2">
+	<input name="idpage" type ="hidden" value="validation" >
+	<p class="p2"><button type="submit"><input type="image" src="images/retourbouton.jpg" ></button></p>
+</form>
+
 </body>
 </html>
 
