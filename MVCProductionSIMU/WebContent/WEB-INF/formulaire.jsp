@@ -64,7 +64,9 @@ setTimeUnix2('tr_start',"date","dates");
 
 <script>
 //Evenement chargé au debut du page 
+
 window.onload=setTimeUnix2('tr_start',"date","dates");
+
 </script>
 
 </body>
