@@ -15,7 +15,7 @@ public class SingletonConnection {
 static{
 	try {
 		Class.forName("com.mysql.jdbc.Driver");//charger Driver JDBC Jar
-		connection=DriverManager.getConnection(url, user, motpasse);//se connecter avec URL base de donnes 
+		connection=DriverManager.getConnection(url, user,motpasse);//se connecter avec URL base de donnes 
 	} catch (Exception e) {
 		e.printStackTrace();
 	}

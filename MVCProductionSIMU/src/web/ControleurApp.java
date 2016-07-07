@@ -52,14 +52,16 @@ public class ControleurApp extends HttpServlet {
 		base= new ImpleTableaux();
 		//Etape1: envoie de requete pour generation d' Objet  Bean rempli.
 		bean=generateur.creerCycleBean(request);
-		//CycleBean bean=	calcul.creerCycleBean(request);
-		//Etape2: enregistrement de Bean recuperé  dans la base de Données
-		
-		//Etape3: creation tableau1
-		//base.creerTableau1(bean);
-		//Etape4: creation tableau2
-		//base.creerTableau2();
-		
+		//Etape2: enregistrement de Bean recuperé  dans la base de Données  creation tableau1
+		base.creerTableau1(bean);
+		//Etape3: creation tableau2
+		try {
+			base.creerTableau2();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		//Etape4: creation tableau3
+	
 		//Etape5 envoi de Bean enregistrer vers page validation
 		request.setAttribute("cycle", bean);
 		

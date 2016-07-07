@@ -8,7 +8,7 @@
 <link type="text/css" rel="stylesheet" href="css/styleFeuille.css"/>
 </head>
 <body >
-<h2>Votre formulaire à bien ete enregistrée </h2>
+<h2>Votre formulaire à bien été enregistré </h2>
 
 les informations enregistrées sont le suivantes :
 <p>Datetimes: ${cycle.datetimes}</p>
