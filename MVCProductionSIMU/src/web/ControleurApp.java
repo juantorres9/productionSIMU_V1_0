@@ -23,7 +23,7 @@ public class ControleurApp extends HttpServlet {
 	private CycleBean bean;
 	private GenerateurBean generateur;
 	private Calculateur calcul;
-	//classes modele
+	//classes Modeles
 	private InterfaceTableaux base;
 
 

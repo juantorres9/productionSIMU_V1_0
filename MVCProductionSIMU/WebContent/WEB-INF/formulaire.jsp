@@ -40,17 +40,18 @@
 PiecesBonnes:  <input type ="number" name="nb" required>
 PiecesNQualité:<input type ="number" name="nr" required>
 
-<p id=idP1>Temps Requis : 
+<p id="idP1">Temps Requis : 
 <label class="label1">Start1</label><input id="tr_start" name="tr_start" type ="text" value="0" readonly>
 <label class="label1">Stop1</label><input id="tr_stop"  name="tr_stop" type ="text" value="0" readonly>
 </p>
 
-<p id=idP2>Arret1(Changement Serie): 
+<p id="idP2">Arret1(Changement Serie): 
 <button id="idButton3" onclick="setTimeUnix('arret1_start')" type="button">Start2</button><input id="arret1_start" name="arret1_start" type ="text" value="0" readonly>
-<button id="idButton4" onclick="setTimeUnix('arret1_stop')" type="button">Stop2 </button><input id="arret1_stop" name="arret1_stop" type ="text" value="0" >
+<button id="idButton4" onclick="setTimeUnix('arret1_stop')" type="button">Stop2 </button><input id="arret1_stop" name="arret1_stop" type ="text" value="0" readonly >
+<span id="span2" class="hide"> le temps de STOP  doit etre POSTERIEUR au temps de START </span>
 </p>
 
-<p id=idP3>Arret2(Reglage): 
+<p id="idP3">Arret2(Reglage): 
 <button id="idButton3" onclick="setTimeUnix('arret2_start')" type="button">Start2</button><input id="arret2_start" name="arret2_start" type ="text" value="0" readonly>
 <button id="idButton4" onclick="setTimeUnix('arret2_stop')" type="button">Stop2 </button><input id="arret2_stop" name="arret2_stop" type ="text" value="0" >
 </p>
