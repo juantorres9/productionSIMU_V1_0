@@ -5,6 +5,12 @@
 	font-weight: bold;
 	color:#000000 ;
 }
+.mainTitre{
+	
+	font-weight: bold;
+	text-align:center;
+	color:#000000 ;
+}
 
 .p1{
 	text-align:center;
@@ -14,8 +20,24 @@
 	text-align:right;
 }
 
+.titre{
+	font-size: 17px;
+	font-weight: bold;
+	color:#000080 ;
+}
+.bonne{
+	font-size: 17px;
+	font-weight: bold;
+	color:#098305 ;
+}
+.mauvais{
+	font-size: 17px;
+	font-weight: bold;
+	color:#ff0000 ;
+}
 /**********FORMULAIRE VALIDATION Classes ********************/
 .correct{
+	display:inline-block;
 	padding:2px 3px;
 	border:2px solid #777;
 	margin:1px;
@@ -24,5 +46,10 @@
 	
 }
 .hide{
-	display:none;
+	display:none;		
+}
+.nohide{
+	display:inline-block;
+	border-color: #0000ff;
+	color: #800080;	
 }
