@@ -66,7 +66,7 @@ function validerArret(idStop,idStart,idSpan){
 			myFunction(idSpan,'START ne peut pas valoir 0 si le temps de STOP existe',true);
 			return false;
 		}else{
-			myFunction(idSpan,'Bon',false);
+			myFunction(idSpan,'Bon final',false);
 			return true;}		
 	}else{
 		myFunction(idSpan,'le temps STOP doit etre POSTERIEUR au temps START',true);
