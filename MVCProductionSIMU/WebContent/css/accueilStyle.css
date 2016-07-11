@@ -1,12 +1,17 @@
 @CHARSET "ISO-8859-1";
-.h1{
+/****************************************************************************************************************************************/
+/*                                 FEUILLE de STYLE de PAGE VALIDATION.JSP Classes de style                                            */
+/****************************************************************************************************************************************/
+/*TITRE0: Classe  pour definir le texte  principal du titre  de la page accueil.jsp*/
+.titre0{
+	font-size: 35px;
 	text-align:center;
-		color:#0000EE ;
+	color:#0000a0 ;
+	margin: 0px; 
+	padding: 2px;
 }
-.p1{
+/*CENTER1: Classe  pour centrer l'image "SIMU"  et le bouton Selecteur de machine  dans  la page accueil.jsp*/
+.center1{
 	text-align:center;
 }
-.button1{
-	text-align:center;
-	border=0;
-}
+

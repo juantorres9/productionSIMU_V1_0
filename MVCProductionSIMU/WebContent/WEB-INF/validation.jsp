@@ -9,7 +9,7 @@
 </head>
 <body >
 <h2 class="mainTitre2">Votre formulaire à bien été enregistré </h2>
-<h3 class="titre">les informations enregistrées sont le suivantes : </h3>
+<h3 class="info">Les paramètres enregistrées sont le suivantes : </h3>
 
 <p class="result">Datetimes: ${cycle.datetimes}</p>
 <p class="result">Reference : ${cycle.reference}</p>
@@ -30,7 +30,7 @@
 
 <form method="get" action="dispatch" id="idForm2">
 	<input name="idpage" type ="hidden" value="validation" >
-	<p class="p2"><button type="submit"><input type="image" src="images/retourbouton.jpg" ></button></p>
+	<p><button type="submit"><input type="image" src="images/retourbouton.jpg" ></button></p>
 </form>
 
 </body>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>SIMU-ERP</title>
 <link type="text/css" rel="stylesheet" href="css/styleFeuille.css"/>
 </head>
 <body>
@@ -14,7 +14,6 @@
 <script src="js/fonction1.js">  </script>
 
 <form id="idForm1" onsubmit="return validerFonctionne('tr_stop')" method="post" action="control" >
-
 <h3 class="titre">Date:
 <input id="date" name="date" value=0  type="hidden" >
 <input id="dates" name="dates" value=0  disabled="disabled" readonly>

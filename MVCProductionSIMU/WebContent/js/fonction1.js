@@ -88,7 +88,7 @@ function myFunction(spanId, message,isShown) {
     var spantip=document.getElementById(spanId);
     if(isShown){
     	spantip.innerHTML=message;
-    	spantip.className='correct';
+    	spantip.className='faute';
     }else {
     	
     	spantip.className='hide';
