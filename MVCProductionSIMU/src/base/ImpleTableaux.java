@@ -144,5 +144,6 @@ public class ImpleTableaux implements InterfaceTableaux{
 		//Deuxieme calcul T2
 		executerProSQL(PROC2);
 	}
+
 	
 }
