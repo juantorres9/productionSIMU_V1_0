@@ -19,6 +19,13 @@ public class GenerateurBean {
 	
 	public static final String ARRET2_START="arret2_start";
 	public static final String ARRET2_STOP="arret2_stop";
+	//Addition 11/07/2016
+	public static final String ARRET3_START="arret3_start";
+	public static final String ARRET3_STOP="arret3_stop";
+	
+	public static final String ARRET4_START="arret4_start";
+	public static final String ARRET4_STOP="arret4_stop";
+	//fin Addition 11/07/2016
 	
 	public static final String NB="nb";
 	public static final String NR="nr";
@@ -32,6 +39,10 @@ public class GenerateurBean {
 		 this.fixerTR(request, TR_STOP, TR_START);
 		 this.fixerARRET1(request, ARRET1_STOP, ARRET1_START);
 		 this.fixerARRET2(request, ARRET2_STOP, ARRET2_START);
+		 //Addition 11/07/2016
+		 this.fixerARRET3(request, ARRET3_STOP, ARRET3_START);
+		 this.fixerARRET4(request, ARRET4_STOP, ARRET4_START);
+		//fin Addition 11/07/2016
 		 this.fixerNB(request, NB);
 		 this.fixerNR(request, NR);
 		 //POST-CALCUL de indicateurs 
@@ -91,13 +102,32 @@ public class GenerateurBean {
 		bean.setArret1(arret1);
 	}
 //CALCULER l'  ARRET2  en DOUBLE  et l'enregistrer sur le BEAN 
-	public void fixerARRET2(HttpServletRequest request,String arret2_stop, String arret2_start){
+	public void fixerARRET2(HttpServletRequest request,String arret2_stop,String arret2_start){
 		double arret2;
 		String arret2_stopPara=calcul.obtenirParam(request, arret2_stop);
 		String arret2_startPara=calcul.obtenirParam(request, arret2_start);
 		arret2=calcul.calculStringDif(arret2_stopPara, arret2_startPara);
 		bean.setArret2(arret2);
 		}
+//Addition 11/07/2016
+//CALCULER l'ARRET3  en DOUBLE  et l'enregistrer sur le BEAN 
+	public void fixerARRET3(HttpServletRequest request,String arret3_stop,String arret3_start){
+		double arret3;
+		String arret3_stopPara=calcul.obtenirParam(request, arret3_stop);
+		String arret3_startPara=calcul.obtenirParam(request, arret3_start);
+		arret3=calcul.calculStringDif(arret3_stopPara, arret3_startPara);
+			bean.setArret3(arret3);
+		}
+//CALCULER l'ARRET4  en DOUBLE  et l'enregistrer sur le BEAN 
+	public void fixerARRET4(HttpServletRequest request,String arret4_stop,String arret4_start){
+		double arret4;
+		String arret4_stopPara=calcul.obtenirParam(request, arret4_stop);
+		String arret4_startPara=calcul.obtenirParam(request, arret4_start);
+		arret4=calcul.calculStringDif(arret4_stopPara, arret4_startPara);
+		bean.setArret4(arret4);
+		}	
+//fin Addition 11/07/2016
+	
 //OBTENIR  pieces NB en INT et l'enregistrer sur le Bean.
 	public void fixerNB(HttpServletRequest request, String nb){
 		int nbBean;

@@ -9,9 +9,13 @@ public class CycleBean {
     private double tr;
     private double arret1;
     private double arret2;
+    //Addition 11/07/2016
+    private double arret3;
+    private double arret4;
+    //fin Addition 11/07/2016
     private int nb;
     private int nr;
-    //Variables derivée.
+    //Variables derivées.
     private double tnet;
     private double tu ;
     //variable auxiliaire
@@ -57,6 +61,20 @@ public class CycleBean {
 	public void setArret2(double arret2) {
 		this.arret2 = arret2;
 	}
+	//Addition 11/07/2016
+	public double getArret3() {
+		return arret3;
+	}
+	public void setArret3(double arret3) {
+		this.arret3 = arret3;
+	}
+	public double getArret4() {
+		return arret4;
+	}
+	public void setArret4(double arret4) {
+		this.arret4 = arret4;
+	}
+	//fin Addition 11/07/2016
 	public int getNb() {
 		return nb;
 	}
@@ -86,8 +104,5 @@ public class CycleBean {
 	}
 	public void setTempsCycle(double tempsCycle) {
 		this.tempsCycle = tempsCycle;
-	}
-    
-    
-    
+	}   
 }

@@ -8,21 +8,25 @@
 <link type="text/css" rel="stylesheet" href="css/styleFeuille.css"/>
 </head>
 <body >
-<h2>Votre formulaire à bien été enregistré </h2>
+<h2 class="mainTitre2">Votre formulaire à bien été enregistré </h2>
+<h3 class="titre">les informations enregistrées sont le suivantes : </h3>
 
-les informations enregistrées sont le suivantes :
-<p>Datetimes: ${cycle.datetimes}</p>
-<p>Reference : ${cycle.reference}</p>
-<p>Nom : ${cycle.nom}</p>
-<p>tr : ${cycle.tr}</p>
-<p>arret1 : ${cycle.arret1}</p>
-<p>arret2 : ${cycle.arret2}</p>
-<p>nb : ${cycle.nb}</p>
-<p>nr : ${cycle.nr}</p>
-<p>tnet: ${cycle.tnet}</p>
-<p>tu: ${cycle.tu}</p>
-<p>tempsCycle: ${cycle.tempsCycle}</p>
-<h1></h1>
+<p class="result">Datetimes: ${cycle.datetimes}</p>
+<p class="result">Reference : ${cycle.reference}</p>
+<p class="result">Nom : ${cycle.nom}</p>
+<p class="result">tr : ${cycle.tr}</p>
+<p class="result">Arret1 : ${cycle.arret1}</p>
+<p class="result">Arret2 : ${cycle.arret2}</p>
+<!-- Addition arret3 et arret4  11/07/2016-->
+<p class="result">Arret3 : ${cycle.arret3}</p>
+<p class="result">Arret4 : ${cycle.arret4}</p>
+<!-- Fin-->
+<p class="result">nb : ${cycle.nb}</p>
+<p class="result">nr : ${cycle.nr}</p>
+<p class="result">tnet: ${cycle.tnet}</p>
+<p class="result">tu: ${cycle.tu}</p>
+<p class="result">tempsCycle: ${cycle.tempsCycle}</p>
+
 
 <form method="get" action="dispatch" id="idForm2">
 	<input name="idpage" type ="hidden" value="validation" >

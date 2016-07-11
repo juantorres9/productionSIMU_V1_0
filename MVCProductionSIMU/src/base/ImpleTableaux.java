@@ -10,16 +10,17 @@ import metier.CycleBean;
 public class ImpleTableaux implements InterfaceTableaux{
 	//PROCEDURE GENERAL
 	private String REF;
-	public static final String PROGEN="pro_ligne_t2";
+	//Modification de nom procedure pour  appeler procedure   avec 4  arrets  11/07/2016
+	public static final String PROGEN="pro_ligne_t2_a";
 	//PROCEDURE REF1 TABLEAU2
-	public static final String PROA1="pro1_ref1_t2";
-	public static final String PROA2="pro2_ref1_t2";
+	public static final String PROA1="pro1_ref1_t2_a";
+	public static final String PROA2="pro2_ref1_t2_a";
 	//PROCEDURE REF2 TABLEAU2
-	public static final String PROB1="pro1_ref2_t2";
-	public static final String PROB2="pro2_ref2_t2";
+	public static final String PROB1="pro1_ref2_t2_a";
+	public static final String PROB2="pro2_ref2_t2_a";
 	//PROCEDURE REF3 TABLEAU2
-	public static final String PROC1="pro1_ref3_t2";
-	public static final String PROC2="pro2_ref3_t2";
+	public static final String PROC1="pro1_ref3_t2_a";
+	public static final String PROC2="pro2_ref3_t2_a";
 	
 	
 	@Override
@@ -30,11 +31,17 @@ public class ImpleTableaux implements InterfaceTableaux{
 		double tr=cycle.getTr();
 		double arret1=cycle.getArret1();
 		double arret2=cycle.getArret2();
+		//Addition 11/07/2016
+		double arret3=cycle.getArret3();
+		double arret4=cycle.getArret4();
+		//fin Addition 11/07/2016
 		int nb=cycle.getNb();
 		int nr=cycle.getNr();
 		double tnet=cycle.getTnet();
 		double tu=cycle.getTu();
-		insertCycleSQL(datetimes, ref, nom, tr, arret1, arret2, nb, nr, tnet, tu);
+		//Addition 11/07/2016
+		insertCycleSQL(datetimes, ref, nom, tr, arret1, arret2,arret3,arret4, nb, nr, tnet, tu);
+		//fin Addition 11/07/2016
 		//Assignation de Reference de Tri
 		REF=ref;
 	}
@@ -82,21 +89,27 @@ public class ImpleTableaux implements InterfaceTableaux{
 				e.printStackTrace();
 			}		
 	}
-	public void insertCycleSQL(String datetimes,String ref ,String nom,double tr,double arret1,double arret2,int nb,int nr ,double tnet,double tu ){
+	//Addition arret34 et nom de tableau1 à tableau1_a  11/07/2016
+	public void insertCycleSQL(String datetimes,String ref,String nom,double tr,double arret1,double arret2,double arret3,double arret4,int nb,int nr,double tnet,double tu){
 		Connection conn=SingletonConnection.getConnection();
 		try{
-			PreparedStatement ps=conn.prepareStatement("INSERT INTO tableau1(id,datetimes,reference,nom,tr,arret1,arret2,nb,nr,tnet,tu)"
-					+ "VALUES(NULL,?,?,?,?,?,?,?,?,?,?)");
+			PreparedStatement ps=conn.prepareStatement("INSERT INTO tableau1_a(id,datetimes,reference,nom,tr,arret1,arret2,arret3,arret4,nb,nr,tnet,tu)"
+					+ "VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?,?)");
+	//fin Addition 11/07/2016
 			ps.setString(1, datetimes);
 			ps.setString(2, ref);
 			ps.setString(3, nom);
 			ps.setDouble(4, tr);
 			ps.setDouble(5, arret1);
 			ps.setDouble(6, arret2);
-			ps.setInt(7, nb);
-			ps.setInt(8, nr);
-			ps.setDouble(9, tnet);
-			ps.setDouble(10, tu);
+			//Addition 11/07/2016
+			ps.setDouble(7, arret3);
+			ps.setDouble(8, arret4);
+			//fin Addition 11/07/2016
+			ps.setInt(9, nb);
+			ps.setInt(10, nr);
+			ps.setDouble(11, tnet);
+			ps.setDouble(12, tu);
 			
 			ps.executeUpdate();
 			ps.close();
@@ -104,6 +117,7 @@ public class ImpleTableaux implements InterfaceTableaux{
 			e.printStackTrace();
 		}
 	}
+
 	public void creerRef1_T2(){
 		//Creation de Lignes vides
 		executerProSQL(PROGEN);

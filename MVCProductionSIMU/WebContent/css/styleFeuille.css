@@ -6,10 +6,14 @@
 	color:#000000 ;
 }
 .mainTitre{
-	
 	font-weight: bold;
 	text-align:center;
 	color:#000000 ;
+}
+.mainTitre2{
+	font-weight: bold;
+	text-align:center;
+	color:#008000 ;
 }
 
 .p1{
@@ -18,6 +22,11 @@
 
 .p2{
 	text-align:right;
+}
+.result{
+	font-weight: bold;
+	text-align:left;
+	color:#000000 ;
 }
 
 .titre{

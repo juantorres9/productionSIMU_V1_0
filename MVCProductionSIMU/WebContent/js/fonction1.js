@@ -42,17 +42,27 @@ function setTimeUnix2(elementId1,elementId2,elementId3){
 function validerFonctionne(elementId){
 	var f1=setTimeUnix(elementId);
 	var f2=getConfirmation();
-	var f3=validerArret('arret1_stop','arret1_start','span2');
-	var f4=validerArret('arret2_stop','arret2_start','span3');
+	var f3=validerArret('arret1_stop','arret1_start','span1');
+	var f4=validerArret('arret2_stop','arret2_start','span2');
+	//Addition arret3 et arret4  11/07/2016
+	var f5=validerArret('arret3_stop','arret3_start','span3');
+	var f6=validerArret('arret4_stop','arret4_start','span4');
 	var result;
-	if(f1 && f2 && f3 && f4){
+	var message = "result vaut" +typeof result +" ="+ result
+	+ "\n f1 vaut " +typeof f1 +" ="+ f1
+	+ "\n f2 boite de conf vaut " +typeof f2 +" ="+ f2
+	+ "\n f3 arret1 vaut " +typeof f3 +" ="+ f3
+	+ "\n f4 arret2 vaut " +typeof f4 +" ="+ f4
+	+ "\n f5 arret3 vaut " +typeof f5 +" ="+ f5
+	+ "\n f6 arret4 vaut " +typeof f6 +" ="+ f6;
+	if(f1 && f2 && f3 && f4 && f5 && f6){
+	//Fin 11/07/2016
 		result=true;
 	}else{
 		result= false;
 	}
-	   alert( "result vaut" +typeof result +" ="+ result+ "\n f1 vaut" +typeof f1 +" ="+ f1  + "\n f2 vaut" +typeof f2 +" ="+ f2 + "\n f3 vaut" +typeof f3 +" ="+ f3+ "\n f4 vaut" +typeof f4 +" ="+ f4);
+	   alert( message);	  
 	return result;
-	
 }
 /*********************************************************VALIDATION************************************************************/
 function validerArret(idStop,idStart,idSpan){
