@@ -12,6 +12,7 @@ public class ImpleTableaux implements InterfaceTableaux{
 	private String REF;
 	//Modification de nom procedure pour  appeler procedure   avec 4  arrets  11/07/2016
 	public static final String PROGEN="pro_ligne_t2_a";
+	public static final String PROGEN_T3="pro_ligne_t3_a";
 	//PROCEDURE REF1 TABLEAU2
 	public static final String PROA1="pro1_ref1_t2_a";
 	public static final String PROA2="pro2_ref1_t2_a";
@@ -21,7 +22,9 @@ public class ImpleTableaux implements InterfaceTableaux{
 	//PROCEDURE REF3 TABLEAU2
 	public static final String PROC1="pro1_ref3_t2_a";
 	public static final String PROC2="pro2_ref3_t2_a";
-	
+	//PROCEDURE REFTOTALE TABLEAU3
+	public static final String PROA1_T3="pro1_reftotal_t3_a";
+	public static final String PROA2_T3="pro2_reftotal_t3_a";
 	
 	@Override
 	public void creerTableau1(CycleBean cycle) {
@@ -69,10 +72,7 @@ public class ImpleTableaux implements InterfaceTableaux{
 
 	@Override
 	public void creerTableau3() {
-	//
-		
-	//
-
+		creerRefTotal_T3();
 	}
 	
 //********************Methodes Auxiliaires*******************************************
@@ -143,6 +143,16 @@ public class ImpleTableaux implements InterfaceTableaux{
 		executerProSQL(PROC1);
 		//Deuxieme calcul T2
 		executerProSQL(PROC2);
+	}
+	
+	//Additio creation données totales tableau3
+	public void creerRefTotal_T3(){
+		//Creation de Lignes vides tableau3
+		executerProSQL(PROGEN_T3);
+		//premier calcul T2
+		executerProSQL(PROA1_T3);
+		//Deuxieme calcul T2
+		executerProSQL(PROA2_T3);
 	}
 
 	

@@ -61,7 +61,7 @@ public class ControleurApp extends HttpServlet {
 			e.printStackTrace();
 		}
 		//Etape4: creation tableau3
-		//A definir partie de Theo !!
+		base.creerTableau3();
 		//Etape5 envoi de Bean enregistrer vers page validation
 		request.setAttribute("cycle", bean);
 		
