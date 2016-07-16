@@ -1,6 +1,6 @@
 //functiones auxiliaires 
 function getConfirmation(){
-	var retVal = confirm("Voulez-vous envoyer le Formulaire?");
+	var retVal = confirm("Voulez-vous envoyer le Formulaire??");
 	if( retVal == true ){       
 		return true;}
 	else{        	
