@@ -89,42 +89,9 @@ function myFunction(spanId, message,isShown) {
     if(isShown){
     	spantip.innerHTML=message;
     	spantip.className='faute';
-    }else { 	
+    }else {
+    	
     	spantip.className='hide';
     }
-    }
-    
-function calculerDif(idStop,idStart,idTotal){
-	//Set de STOP arret choisi en temps  UNIX  
-	setTimeUnix(idStop);
-	//recuperation des elements 
-	var stop=document.getElementById(idStop);
-	var start=document.getElementById(idStart);
-	var total=document.getElementById(idTotal);
-	//recuperation de VALEURS des  elements 
-	var stopVal=parseInt(stop.value);
-	var startVal=parseInt(start.value);
-	var totalVal=parseInt(total.value);
-	//variables auxiliaires 
-	var result=0;
-	var dif=0;
-	var test1 =(stopVal>=startVal);
-	
-	if(test1){
-	dif = stopVal-startVal;	
-		if(	stopVal!=0 && startVal==0){
-			result=totalVal;
-		}else{
-			result=totalVal+dif;
-		}
-		}
-	
-	//MODIFIER la Propiete de l'element Input  avec la valeur  qu'on vient de calculer 
-	total.value=result; 
-	//reinitialisation   arrets
-	stop.value=0;
-	start.value=0;
 }
-
-
 

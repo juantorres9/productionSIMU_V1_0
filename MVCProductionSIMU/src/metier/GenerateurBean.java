@@ -13,12 +13,18 @@ public class GenerateurBean {
 
 	public static final String TR_START="tr_start";
 	public static final String TR_STOP="tr_stop";
-
+	
+	/**DEPRECATED ARRETFIX: 21/07/2016
 	public static final String ARRET1_START="arret1_start";
 	public static final String ARRET1_STOP="arret1_stop";
+	*/
+	public static final String ARRET1_TOTAL="arret1_total";
 	
+	/**DEPRECATED ARRETFIX: 21/07/2016
 	public static final String ARRET2_START="arret2_start";
 	public static final String ARRET2_STOP="arret2_stop";
+	*/
+	public static final String ARRET2_TOTAL="arret2_total";
 	//Addition 11/07/2016
 	public static final String ARRET3_START="arret3_start";
 	public static final String ARRET3_STOP="arret3_stop";
@@ -37,8 +43,15 @@ public class GenerateurBean {
 		 this.fixerREF_TC(request, REF_TC);
 		 this.fixerNOM(request, NOM);
 		 this.fixerTR(request, TR_STOP, TR_START);
+		/**DEPRECATED VERSION ARRETFIX : 21/07/2016 
 		 this.fixerARRET1(request, ARRET1_STOP, ARRET1_START);
+		 **/
+		 //VERSION ARRETFIX : 21/07/2016
+		 this.fixerARRET1(request, ARRET1_TOTAL);
+		 /**DEPRECATED VERSION ARRETFIX : 21/07/2016 
 		 this.fixerARRET2(request, ARRET2_STOP, ARRET2_START);
+		 **/
+		 this.fixerARRET2(request, ARRET2_TOTAL);
 		 //Addition 11/07/2016
 		 this.fixerARRET3(request, ARRET3_STOP, ARRET3_START);
 		 this.fixerARRET4(request, ARRET4_STOP, ARRET4_START);
@@ -94,14 +107,24 @@ public class GenerateurBean {
 		 bean.setTr(tr);
 	 }
 //CALCULER l'  ARRET1  en DOUBLE  et l'enregistrer sur le BEAN 
+	/** DEPRECATED ARRETFIX: 21/07/2016
 	public void fixerARRET1(HttpServletRequest request,String arret1_stop, String arret1_start){
+	double arret1;
+	String arret1_stopPara=calcul.obtenirParam(request, arret1_stop);
+	String arret1_startPara=calcul.obtenirParam(request, arret1_start);
+	arret1=calcul.calculStringDif(arret1_stopPara, arret1_startPara);
+	bean.setArret1(arret1);
+	}
+	*/
+//VERSION ARRETFIX :21/07/2016  FORMATAGE ET ENREGISTREMENT Direct de la  Difference d'ARRET provenant de la REQUETE HTTP
+	public void fixerARRET1(HttpServletRequest request,String arret1_total){
 		double arret1;
-		String arret1_stopPara=calcul.obtenirParam(request, arret1_stop);
-		String arret1_startPara=calcul.obtenirParam(request, arret1_start);
-		arret1=calcul.calculStringDif(arret1_stopPara, arret1_startPara);
-		bean.setArret1(arret1);
+		String arret1_totalPara=calcul.obtenirParam(request, ARRET1_TOTAL);
+		arret1=calcul.calculStringDirectDif(arret1_totalPara);
+		bean.setArret1(arret1);	
 	}
 //CALCULER l'  ARRET2  en DOUBLE  et l'enregistrer sur le BEAN 
+	/** DEPRECATED ARRETFIX: 21/07/2016
 	public void fixerARRET2(HttpServletRequest request,String arret2_stop,String arret2_start){
 		double arret2;
 		String arret2_stopPara=calcul.obtenirParam(request, arret2_stop);
@@ -109,6 +132,14 @@ public class GenerateurBean {
 		arret2=calcul.calculStringDif(arret2_stopPara, arret2_startPara);
 		bean.setArret2(arret2);
 		}
+	*/
+//VERSION ARRETFIX :21/07/2016  FORMATAGE ET ENREGISTREMENT Direct de la  Difference d'ARRET provenant de la REQUETE HTTP
+	public void fixerARRET2(HttpServletRequest request,String arret2_total){
+		double arret2;
+		String arret2_totalPara=calcul.obtenirParam(request, ARRET2_TOTAL);
+		arret2=calcul.calculStringDirectDif(arret2_totalPara);
+		bean.setArret2(arret2);	
+		}		
 //Addition 11/07/2016
 //CALCULER l'ARRET3  en DOUBLE  et l'enregistrer sur le BEAN 
 	public void fixerARRET3(HttpServletRequest request,String arret3_stop,String arret3_start){

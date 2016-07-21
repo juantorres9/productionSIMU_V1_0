@@ -19,6 +19,15 @@ public static final String UNITEtemps="minute";//possible minute ou seconde
 	 tr=calculUnixDif(stop,start,UNITEtemps);
 	 return tr;
  }
+ 
+//****************************************************************************************************************************************
+//VERSION  ARRETFIX: 21/07/2016 CALCULER  la difference UNIX DIRECTEMENT  à format DOUBLE OK 
+ double calculStringDirectDif(String sTotal){
+	 double dif=0;
+	 long total=Long.parseLong(sTotal);//conversion du temps total String à long UNIX 
+	 dif=this.formaterUnixDouble(total, UNITEtemps);//convert UNIX temps a SECONDE double
+	 return dif;
+ }
 //****************************************************************************************************************************************
  //CALCULER  le TEMPS TNET en double et enregistrement sur Bean //Unité du temps par defaut= UNITEtemps OK
  /**
@@ -66,9 +75,25 @@ DEPRECATED: public double  calculTnet(int nb , int nr ,  String ref){
 	return tc;
 	}	**/
  //***************************************************************************************************************************************
- //CALCULER de DIFFERENCE  entre deux timestamps UNIX  et retourne en MINUTES ou SECONDES double OK
+ //CALCULER la DIFFERENCE  entre deux timestamps UNIX  et retourne en MINUTES ou SECONDES double OK  
  double calculUnixDif(long  stop , long start ,String type){
 	 double dif=stop-start;
+	 double result;
+	 if(type.equals("seconde")){
+		 result=dif/1000;
+		 result=Math.round(result*10000.0)/10000.0;
+	 }else if(type.equals("minute")){
+		 result=dif/60000;
+		 result=Math.round(result*10000.0)/10000.0;
+	 }else{
+		 result=dif;
+	 }
+	 return result;
+ }
+ //***************************************************************************************************************************************
+ //VERSION ARRETFIX : 21/07/2016 FORMATAGE UNIX temps en DOUBLE SECONDS ou MINUTES double  OK 
+ double formaterUnixDouble(long unixtime,String type){
+	 double dif=unixtime;
 	 double result;
 	 if(type.equals("seconde")){
 		 result=dif/1000;

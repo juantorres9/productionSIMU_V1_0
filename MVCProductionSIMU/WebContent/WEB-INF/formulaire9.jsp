@@ -29,10 +29,13 @@
 </p>
 
 <p class="titre" >Collaborateur:
-<input id="nom" name="nom" value="${nom}" readonly>
+<select name="nom" form="idForm1" required>
+  <option value="">Choisir</option>
+  <option value="Carlos">Carlos</option>
+  <option value="Louis">Louis</option>
+  <option value="Marie">Marie</option>
+</select>
 </p>
-
-
 
 <span class="bonne">Pieces bonnes:  <input type ="number" name="nb" required></span>
 <span class="mauvais">Pieces NQualité:<input type ="number" name="nr" required></span>
@@ -42,25 +45,20 @@
 <label class="label1">Stop1</label><input id="tr_stop"  name="tr_stop" type ="text" value="0" readonly>
 </p>
 
-<p class="titre">Arret1(réglage): 
+<p class="titre">Arret1(changement serie): 
 <button id="idButton1Start" onclick="setTimeUnix('arret1_start')" type="button">Start2</button><input id="arret1_start" name="arret1_start" type ="text" value="0" readonly>
-<button id="idButton1Stop" onclick="calculerDif('arret1_stop','arret1_start','arret1_total')" type="button">Stop2 </button><input id="arret1_stop" name="arret1_stop" type ="text" value="0" readonly >
-
-<input id="arret1_total" name="arret1_total" type ="text" value="0" readonly >
+<button id="idButton1Stop" onclick="setTimeUnix('arret1_stop')" type="button">Stop2 </button><input id="arret1_stop" name="arret1_stop" type ="text" value="0" readonly >
 <span id="span1" class="hide">vide</span>
 </p>
 
-
 <p class="titre">Arret2(panne): 
 <button id="idButton2Start" onclick="setTimeUnix('arret2_start')" type="button">Start2</button><input id="arret2_start" name="arret2_start" type ="text" value="0" readonly>
-<button id="idButton2Stop" onclick="calculerDif('arret2_stop','arret2_start','arret2_total')" type="button">Stop2 </button><input id="arret2_stop" name="arret2_stop" type ="text" value="0" readonly>
-
-<input id="arret2_total" name="arret2_total" type ="text" value="0" readonly >
+<button id="idButton2Stop" onclick="setTimeUnix('arret2_stop')" type="button">Stop2 </button><input id="arret2_stop" name="arret2_stop" type ="text" value="0" readonly>
 <span id="span2" class="hide">vide</span>
 </p>
 
 <!-- Addition arret3 + arret4  11/07/2016 -->
-<p class="titre">Arret3(changement serie): 
+<p class="titre">Arret3(réglage): 
 <button id="idButton3Start" onclick="setTimeUnix('arret3_start')" type="button">Start3</button><input id="arret3_start" name="arret3_start" type ="text" value="0" readonly>
 <button id="idButton3Stop" onclick="setTimeUnix('arret3_stop')" type="button">Stop3</button><input id="arret3_stop" name="arret3_stop" type ="text" value="0" readonly >
 <span id="span3" class="hide">vide</span>
