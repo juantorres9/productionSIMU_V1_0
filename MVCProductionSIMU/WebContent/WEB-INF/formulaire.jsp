@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2 class="mainTitre">Bonjour, Formulaire de Bobineuse 1</h2>
+<h2 class="mainTitre">Bonjour,Formulaire de Bobineuse 1</h2>
 <script src="js/validation.js">  </script>
 <script src="js/fonction1.js">  </script>
 
@@ -46,7 +46,7 @@
 <button id="idButton1Start" onclick="setTimeUnix('arret1_start')" type="button">Start2</button><input id="arret1_start" name="arret1_start" type ="text" value="0" readonly>
 <button id="idButton1Stop" onclick="calculerDif('arret1_stop','arret1_start','arret1_total')" type="button">Stop2 </button><input id="arret1_stop" name="arret1_stop" type ="text" value="0" readonly >
 
-<input id="arret1_total" name="arret1_total" type ="text" value="0" readonly >
+Total1:<input id="arret1_total" name="arret1_total" type ="text" value="0" readonly >
 <span id="span1" class="hide">vide</span>
 </p>
 
@@ -55,7 +55,7 @@
 <button id="idButton2Start" onclick="setTimeUnix('arret2_start')" type="button">Start2</button><input id="arret2_start" name="arret2_start" type ="text" value="0" readonly>
 <button id="idButton2Stop" onclick="calculerDif('arret2_stop','arret2_start','arret2_total')" type="button">Stop2 </button><input id="arret2_stop" name="arret2_stop" type ="text" value="0" readonly>
 
-<input id="arret2_total" name="arret2_total" type ="text" value="0" readonly >
+Total2:<input id="arret2_total" name="arret2_total" type ="text" value="0" readonly >
 <span id="span2" class="hide">vide</span>
 </p>
 
