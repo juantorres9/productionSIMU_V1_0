@@ -55,20 +55,24 @@ Total1:<input id="arret1_total" name="arret1_total" type ="text" value="0" reado
 <button id="idButton2Start" onclick="setTimeUnix('arret2_start')" type="button">Start2</button><input id="arret2_start" name="arret2_start" type ="text" value="0" readonly>
 <button id="idButton2Stop" onclick="calculerDif('arret2_stop','arret2_start','arret2_total')" type="button">Stop2 </button><input id="arret2_stop" name="arret2_stop" type ="text" value="0" readonly>
 
-Total2:<input id="arret2_total" name="arret2_total" type ="text" value="0" readonly >
+Total2:<input id="arret2_total" name="arret2_total" type ="text" value="0" readonly>
 <span id="span2" class="hide">vide</span>
 </p>
 
 <!-- Addition arret3 + arret4  11/07/2016 -->
 <p class="titre">Arret3(changement serie): 
 <button id="idButton3Start" onclick="setTimeUnix('arret3_start')" type="button">Start3</button><input id="arret3_start" name="arret3_start" type ="text" value="0" readonly>
-<button id="idButton3Stop" onclick="setTimeUnix('arret3_stop')" type="button">Stop3</button><input id="arret3_stop" name="arret3_stop" type ="text" value="0" readonly >
+<button id="idButton3Stop" onclick="calculerDif('arret3_stop','arret3_start','arret3_total')" type="button">Stop3</button><input id="arret3_stop" name="arret3_stop" type ="text" value="0" readonly>
+
+Total3:<input id="arret3_total" name="arret3_total" type ="text" value="0" readonly>
 <span id="span3" class="hide">vide</span>
 </p>
 
 <p class="titre">Arret4(controle machine): 
 <button id="idButton4Start" onclick="setTimeUnix('arret4_start')" type="button">Start4</button><input id="arret4_start" name="arret4_start" type ="text" value="0" readonly>
-<button id="idButton4Stop" onclick="setTimeUnix('arret4_stop')" type="button">Stop4</button><input id="arret4_stop" name="arret4_stop" type ="text" value="0" readonly>
+<button id="idButton4Stop" onclick="calculerDif('arret4_stop','arret4_start','arret4_total')" type="button">Stop4</button><input id="arret4_stop" name="arret4_stop" type ="text" value="0" readonly>
+
+Total3:<input id="arret4_total" name="arret4_total" type ="text" value="0" readonly>
 <span id="span4" class="hide">vide</span>
 </p>
 

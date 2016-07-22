@@ -26,11 +26,17 @@ public class GenerateurBean {
 	*/
 	public static final String ARRET2_TOTAL="arret2_total";
 	//Addition 11/07/2016
+	/**DEPRECATED VERSION MASTER: 22/07/2016
 	public static final String ARRET3_START="arret3_start";
 	public static final String ARRET3_STOP="arret3_stop";
-	
+	*/
+	public static final String ARRET3_TOTAL="arret3_total";
+	/**DEPRECATED VERSION MASTER: 22/07/2016
 	public static final String ARRET4_START="arret4_start";
 	public static final String ARRET4_STOP="arret4_stop";
+	*/
+	
+	public static final String ARRET4_TOTAL="arret4_total";
 	//fin Addition 11/07/2016
 	
 	public static final String NB="nb";
@@ -53,8 +59,17 @@ public class GenerateurBean {
 		 **/
 		 this.fixerARRET2(request, ARRET2_TOTAL);
 		 //Addition 11/07/2016
+		 /**DEPRECATED VERSION MASTER : 22/07/2016 
 		 this.fixerARRET3(request, ARRET3_STOP, ARRET3_START);
-		 this.fixerARRET4(request, ARRET4_STOP, ARRET4_START);
+		 */
+		 try {
+			this.fixerARRET(request, ARRET3_TOTAL);
+			this.fixerARRET(request, ARRET4_TOTAL);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		 
+		
 		//fin Addition 11/07/2016
 		 this.fixerNB(request, NB);
 		 this.fixerNR(request, NR);
@@ -142,6 +157,7 @@ public class GenerateurBean {
 		}		
 //Addition 11/07/2016
 //CALCULER l'ARRET3  en DOUBLE  et l'enregistrer sur le BEAN 
+	/** DEPRECATED VERSION MASTER : 22/07/2016
 	public void fixerARRET3(HttpServletRequest request,String arret3_stop,String arret3_start){
 		double arret3;
 		String arret3_stopPara=calcul.obtenirParam(request, arret3_stop);
@@ -149,6 +165,24 @@ public class GenerateurBean {
 		arret3=calcul.calculStringDif(arret3_stopPara, arret3_startPara);
 			bean.setArret3(arret3);
 		}
+		*/
+	public void fixerARRET(HttpServletRequest request,String arret_total) throws Exception{
+		double arret;
+		String arret_totalPara=calcul.obtenirParam(request, arret_total);
+		arret=calcul.calculStringDirectDif(arret_totalPara);
+		if(arret_total.equals(ARRET1_TOTAL)){
+			bean.setArret1(arret);
+		}else if(arret_total.equals(ARRET2_TOTAL)) {
+			bean.setArret2(arret);
+		}else if(arret_total.equals(ARRET3_TOTAL)){
+			bean.setArret3(arret);
+		}else if(arret_total.equals(ARRET4_TOTAL)){
+			bean.setArret4(arret);
+		}else{
+			throw new Exception ("Erreur :Acune paramettre HTTP  d'ARRET_TOTAL a été recu qui correspond  au  CONSTANTS ");
+		}
+		}
+			
 //CALCULER l'ARRET4  en DOUBLE  et l'enregistrer sur le BEAN 
 	public void fixerARRET4(HttpServletRequest request,String arret4_stop,String arret4_start){
 		double arret4;
