@@ -76,7 +76,7 @@ public static final String UNITEtemps="minute";//possible minute ou seconde
  }
  //***************************************************************************************************************************************
  //FORMATAGE  de timestamps UNIX en DATETIME SQL String OK
- String formaterUnixTime(long unixtime){
+ public String formaterUnixTime(long unixtime){
 	 Instant timestamp;
 	 LocalDateTime datetime1;
 	 DateTimeFormatter format;

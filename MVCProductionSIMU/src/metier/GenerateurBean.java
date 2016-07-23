@@ -131,8 +131,5 @@ public class GenerateurBean {
 		double tu =calcul.calculTu(nb, ref, tc);
 		bean.setTu(tu);
 	}
-	
-		 
-	 
 	 
 }
