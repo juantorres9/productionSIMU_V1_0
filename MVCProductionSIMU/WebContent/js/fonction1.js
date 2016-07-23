@@ -48,7 +48,7 @@ function validerFonctionne(elementId){
 	var f5=validerArret('arret3_stop','arret3_start','span3');
 	var f6=validerArret('arret4_stop','arret4_start','span4');
 	var result;
-	var message = "result vaut" +typeof result +" ="+ result
+	var message = "result vaut " +typeof result +" ="+ result
 	+ "\n f1 vaut " +typeof f1 +" ="+ f1
 	+ "\n f2 boite de conf vaut " +typeof f2 +" ="+ f2
 	+ "\n f3 arret1 vaut " +typeof f3 +" ="+ f3
@@ -117,8 +117,7 @@ function calculerDif(idStop,idStart,idTotal){
 		}else{
 			result=totalVal+dif;
 		}
-		}
-	
+	}
 	//MODIFIER la Propiete de l'element Input  avec la valeur  qu'on vient de calculer 
 	total.value=result; 
 	//reinitialisation   arrets

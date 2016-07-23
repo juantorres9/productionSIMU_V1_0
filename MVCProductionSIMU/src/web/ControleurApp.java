@@ -26,7 +26,6 @@ public class ControleurApp extends HttpServlet {
 	//classes Modeles
 	private InterfaceTableaux base;
 
-
     public ControleurApp() {
     }
 
@@ -39,11 +38,6 @@ public class ControleurApp extends HttpServlet {
 	this.getServletContext().getRequestDispatcher(FORMUlAIRE).forward(request, response);
 	
 	}
-		
-		
-
-	
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Etape0: Instantiation des Objet 
 		bean=new CycleBean();

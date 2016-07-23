@@ -7,8 +7,7 @@ import java.time.format.DateTimeFormatter;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class Calculateur {
-		
+public class Calculateur {		
 public static final String UNITEtemps="minute";//possible minute ou seconde 
 //****************************************************************************************************************************************
  //CALCULER  difference du  temps STOP-START en utilisant des STRING comme parametres et en retournant un DOUBLE 
@@ -19,9 +18,8 @@ public static final String UNITEtemps="minute";//possible minute ou seconde
 	 tr=calculUnixDif(stop,start,UNITEtemps);
 	 return tr;
  }
- 
 //****************************************************************************************************************************************
-//VERSION  ARRETFIX: 21/07/2016 CALCULER  la difference UNIX DIRECTEMENT  à format DOUBLE OK 
+//VERSION  ARRETFIX: 21/07/2016 CALCULER  la difference UNIX DIRECTEMENT  à format DOUBLE à partir d'un seule  temps STRING UNIX OK 
  double calculStringDirectDif(String sTotal){
 	 double dif=0;
 	 long total=Long.parseLong(sTotal);//conversion du temps total String à long UNIX 
@@ -30,13 +28,6 @@ public static final String UNITEtemps="minute";//possible minute ou seconde
  }
 //****************************************************************************************************************************************
  //CALCULER  le TEMPS TNET en double et enregistrement sur Bean //Unité du temps par defaut= UNITEtemps OK
- /**
-DEPRECATED: public double  calculTnet(int nb , int nr ,  String ref){
-	 double tc =getTC(UNITEtemps,ref);
-	 double tnet=(nb+nr)*tc;	
-	 tnet=Math.round(tnet*10000.0)/10000.0;
-	 return tnet;
- }**/
  public  double calculTnet(int nb , int nr ,String ref ,double tc ){
 	 double tnet=0;
 	 tnet=(nb+nr)*tc;
@@ -45,35 +36,12 @@ DEPRECATED: public double  calculTnet(int nb , int nr ,  String ref){
  }
 //****************************************************************************************************************************************
 //CALCULER le temps TU en double et enregistrement sur Bean OK
- /**DEPRECATED: public  double  calculTu(int nb,String ref){
- double tc =getTC(UNITEtemps,ref);
- double tu=nb*tc;	
- tu=Math.round(tu*10000.0)/10000.0;
- return tu;
-}**/
  public  double calculTu(int nb,String ref ,double tc ){
 	 double tu=0;
 	 tu=(nb)*tc;
 	 tu=Math.round(tu*10000.0)/10000.0;
 	 return tu;
  }
-
- //***************************************************************************************************************************************
- //CHOISIR le TC a utiliser pour calculer les valeurs tu ET tnet selon le parametre reference  la requete  HTTP OK à MODIFIER POUR SECONDS  MINUTES ET HEURES PAR BOBINEUSE  OK
- /**DEPRECATED:double getTC(String type,String ref ){
-	TempsCycle tcObj=TempsCycle.getTcObjet();
-	double tc=0;
-	if(type.equalsIgnoreCase("seconde")){
-		tc=tcObj.getMachine1().get(0).get(ref);	
-	}else if(type.equalsIgnoreCase("minute")){
-		tc=tcObj.getMachine1().get(1).get(ref);	
-	}else if(type.equalsIgnoreCase("heure")){
-		tc=tcObj.getMachine1().get(2).get(ref);	
-	}else{
-		new IllegalArgumentException("Variable Type TempsCycle Invalid " +type);
-	}
-	return tc;
-	}	**/
  //***************************************************************************************************************************************
  //CALCULER la DIFFERENCE  entre deux timestamps UNIX  et retourne en MINUTES ou SECONDES double OK  
  double calculUnixDif(long  stop , long start ,String type){
@@ -91,7 +59,7 @@ DEPRECATED: public double  calculTnet(int nb , int nr ,  String ref){
 	 return result;
  }
  //***************************************************************************************************************************************
- //VERSION ARRETFIX : 21/07/2016 FORMATAGE UNIX temps en DOUBLE SECONDS ou MINUTES double  OK 
+ //FORMATER TEMPS UNIX DE FORMAT LONG à DOUBLE en SECONDS ou MINUTES OK 
  double formaterUnixDouble(long unixtime,String type){
 	 double dif=unixtime;
 	 double result;
@@ -113,7 +81,6 @@ DEPRECATED: public double  calculTnet(int nb , int nr ,  String ref){
 	 LocalDateTime datetime1;
 	 DateTimeFormatter format;
 	 String  datetime2;
-		
 	 //Convertir Unix milliseconds à Instant Object 
 	 timestamp=Instant.ofEpochMilli(unixtime);
 	 //Convertir Instant Object à LocalDateTime avec Default TimeZone
@@ -124,7 +91,6 @@ DEPRECATED: public double  calculTnet(int nb , int nr ,  String ref){
 	 datetime2=datetime1.format(format);
 	 return datetime2;
  }
- 
 //****************************************************************************************************************************************
  //SEPARER separere des String provenanat du requet  Multiple en 1 tableau de 2 String REF et TC
  public String [] separerString(String parametre) throws Exception{
