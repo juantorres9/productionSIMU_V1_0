@@ -12,6 +12,14 @@
 }
 /*CENTER1: Classe  pour centrer l'image "SIMU"  et le bouton Selecteur de machine  dans  la page accueil.jsp*/
 .center1{
+	font-size:40px;
+	color:#0000a0 ;
 	text-align:center;
 }
 
+/*DROPDOWN0: Classe pour  changer le STYLE (couleur, taille) de TEXT dans les dropdown de  la page accueil.jsp*/
+.dropdown0{
+	font-size:40px;
+	font-weight:bold;
+	color:#ff0000 ;
+}
